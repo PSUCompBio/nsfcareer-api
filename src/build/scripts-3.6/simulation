@@ -1,0 +1,19 @@
+#!python
+
+import requests
+import base64
+import sys
+
+# Filename via command line
+filename = sys.argv[1]
+
+# Reading file and converting it to base64 format
+with open(filename, 'rb') as fd:
+     b64data = base64.b64encode(fd.read())
+files = {'upload_file': b64data }
+
+# Calling the api to carry out simulations
+r = requests.post('http://nsfcareer-compute-service.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', files)
+
+# Logging response
+print(r.text)

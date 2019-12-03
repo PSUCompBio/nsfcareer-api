@@ -1,0 +1,22 @@
+Metadata-Version: 2.1
+Name: simulation
+Version: 0.1
+Summary: Utility package to generate simulation data
+Home-page: UNKNOWN
+Author: vradars
+Author-email: abby@vradars.com
+License: UNKNOWN
+Description: Prerequisite :
+        1. Python (2.7 and higher)
+        2. Requests Module
+        	Download it using :
+            	pip install requests
+        
+        Api usage :
+        python 
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: Yogaya License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
