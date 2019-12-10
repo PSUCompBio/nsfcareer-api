@@ -13,7 +13,7 @@ with open(filename, 'rb') as fd:
 files = {'upload_file': b64data }
 
 # Calling the api to carry out simulations
-r = requests.post('http://nsfcareer-compute-service.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', files)
+r = requests.post('http://nsfcareercomputeservice-env-1.fwgim3cbs8.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', files)
 
 # Logging response
 print(r.text)

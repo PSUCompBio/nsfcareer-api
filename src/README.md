@@ -3,6 +3,7 @@ Prerequisite :
 2. Requests Module
 	Download it using :
     	pip install requests
+	pip install "requests[security]"
 
 Install the package using :
 pip install src/dist/simulation-0.1-py3-none-any.whl
