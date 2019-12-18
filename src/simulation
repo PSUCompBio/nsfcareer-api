@@ -1,19 +1,48 @@
 #!/usr/bin/env python3
-
+import json
 import requests
 import base64
 import sys
+from datetime import datetime
+import numpy as np
 
 # Filename via command line
 filename = sys.argv[1]
-
+print("========================================================================");
+print("|                           BRAIN SIM CLI                               |");
+print("========================================================================");
+print()
+username = input("Enter Your Username: ")
+password = input("Enter Your Password: ")
+print("========================================================================");
+print("| -> Please wait, Uploading Data                                        |");
+print("========================================================================");
 # Reading file and converting it to base64 format
 with open(filename, 'rb') as fd:
-     b64data = base64.b64encode(fd.read())
-files = {'upload_file': b64data }
+    b64data = base64.b64encode(fd.read())
+    data = {'upload_file': b64data , 'user_name' : username , 'password' : password}
 
-# Calling the api to carry out simulations
-r = requests.post('http://nsfcareercomputeservice-env-1.fwgim3cbs8.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', files)
+    print("========================================================================");
+    print("| -> Response Received                                                  |");
+    print("========================================================================");
+    # Calling the api to carry out simulations
+    r = requests.post('http://brainsim.health/api/upload/sensor-file', data = data)
 
-# Logging response
-print(r.text)
+    # Logging response
+response = json.loads(r.text);
+if response["message"] == "success":
+    # Iterate over the Image URLS & Write it in File-with timestamp
+    print();
+    print("| -> Below are the URLS to simulation images : ")
+    # Using for loop
+    for i in response["image_url"]:
+        print(i)
+
+    image_urls_list = np.array(response["image_url"])
+    filename = datetime.now().strftime("%Y%m%d-%H%M%S")
+    print("| -> CSV File generated containing Simulation Images URLs : " + filename + ".csv")
+    np.savetxt( filename + '.csv', image_urls_list, delimiter=',', fmt=['%s'], header='Simulation URLs', comments='')
+else:
+    print(r.text)
+print()
+print("========================================================================");
