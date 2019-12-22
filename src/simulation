@@ -16,8 +16,8 @@ doc, tag, text = Doc().tagtext()
 # Setting up Argument parsing
 parser = argparse.ArgumentParser(description='Utility package to generate simulation data')
 parser.add_argument('--filename', default=None, type=str, help="Path to sensor file")
-parser.add_argument('--user', default=None, type=str, help="You account username")
-parser.add_argument('--password', default=None, type=str, help="You account Password")
+parser.add_argument('--user', default=None, type=str, help="NSFCAREER.IO account E-Mail")
+parser.add_argument('--password', default=None, type=str, help="NSFCAREER.IO account Password")
 
 args = parser.parse_args()
 
@@ -45,8 +45,8 @@ with open(filename, 'rb') as fd:
     print("========================================================================");
     # Calling the api to carry out simulations
     # r = requests.post('http://brainsim.health/api/upload/sensor-file', data = data)
-    r = requests.post('http://brainsim.health/api/upload/sensor-file', data = data)
-
+    r = requests.post('https://nsfcareer.io/api/upload/sensor-file', data = data)
+    
     # Logging response
 response = json.loads(r.text);
 if response["message"] == "success":
