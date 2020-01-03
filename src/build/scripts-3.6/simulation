@@ -44,8 +44,8 @@ with open(filename, 'rb') as fd:
     print("| -> Response Received                                                  |");
     print("========================================================================");
     # Calling the api to carry out simulations
-    # r = requests.post('http://brainsim.health/api/upload/sensor-file', data = data)
-    r = requests.post('http://nsfcareer.io/api/upload/sensor-file', data = data)
+    # r = requests.post('http://nsfcareer-compute-instance-test.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', data = data)
+    r = requests.post('https://nsfcareer.io/api/upload/sensor-file', data = data)
     
     # Logging response
 response = json.loads(r.text);
