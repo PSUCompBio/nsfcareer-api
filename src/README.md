@@ -18,9 +18,8 @@ Utility package to generate simulation data from sensor data.
  - #### For Windows x64: 
     - Download the `brainsim.zip` from `https://gitradar.in/download/brainsim.zip`
     - Extract the `brainsim.zip` into your `C:` Directory. The extracted zip should look like this in System Files `C:\brainsim-SDK`
-    - Add the `C:\brainsim-SDK` 
-    - Type Edit environment variables
     - Open start menu,
+        - Type Edit environment variables
         - Open the option Edit the system environment variables
         - Click Environment variables... button
         - There you see two boxes, in System Variables box find path variable
