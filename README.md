@@ -2,16 +2,14 @@
 
 ## Prerequisite :
 
- - - - Python (version 3)
-Requests Module Download it using : 
+- Python (version 3)
+- Requests Module Download it using : 
+- - pip install requests 
+- - pip install "requests[security]" 
+- - pip install yattag
 
-pip install requests 
-
-pip install "requests[security]" 
-
-pip install yattag
-
-Install the package using : pip install src/dist/simulation-0.1-py3-none-any.whl
+- Install the package using : 
+- - pip install src/dist/simulation-0.1-py3-none-any.whl
 
 API usage : simulation filename --filename "Path/to/sensor/file" --user "Your NSFCAREER.IO Registered Username" --password "Your NSFCAREER.IO Account Password" where filename is the sensor data file that you want to run simulations against.
 
