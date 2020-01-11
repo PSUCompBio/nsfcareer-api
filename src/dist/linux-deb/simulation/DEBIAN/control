@@ -1,0 +1,9 @@
+Package: simulation
+Priority: optional
+Section: misc
+Maintainer: abby<abby@vradars.com>
+Architecture: all
+Version: 1.0
+Depends:
+Description: A CLI tool to generate the simulation of brain 
+
