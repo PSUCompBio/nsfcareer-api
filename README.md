@@ -1,6 +1,6 @@
 # nsfcareer-api
 
-## Prerequisite :
+## Prerequisites :
 
 - Python (version 3)
 - Requests Module Download it using : 
