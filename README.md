@@ -11,7 +11,7 @@
 - Install the package using : 
   - pip install src/dist/simulation-0.1-py3-none-any.whl
 
-# API usage : 
+## API usage : 
 > simulation filename --filename "Path/to/sensor/file" --user "Your NSFCAREER.IO Registered Username" --password "Your NSFCAREER.IO Account Password" 
 
 where filename is the sensor data file that you want to run simulations against.The response will be stored inside timestamp folder.
@@ -20,7 +20,7 @@ where filename is the sensor data file that you want to run simulations against.
  - pip uninstall simulation 
  - pip install src/dist/simulation-0.1.tar.gz
 
-# TO Build the Package (Only for development Purpose):
+## TO Build the Package (Only for development Purpose):
 
 Go into /src directory
 
