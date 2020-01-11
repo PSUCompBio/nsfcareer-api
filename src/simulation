@@ -16,13 +16,11 @@ doc, tag, text = Doc().tagtext()
 # Setting up Argument parsing
 parser = argparse.ArgumentParser(description='Utility package to generate simulation data')
 parser.add_argument('--filename', default=None, type=str, help="Path to sensor file")
-parser.add_argument('--user', default=None, type=str, help="GIT-RADAR account username")
-parser.add_argument('--password', default=None, type=str, help="GIT-RADAR account Password")
 
 args = parser.parse_args()
 
 # Checking if arguments are not empty
-if (args.user  == None or args.password == None or args.filename == None):
+if (args.filename == None):
     parser.print_help()
     sys.exit(0)
 
@@ -30,8 +28,9 @@ print("========================================================================"
 
 print()
 filename = args.filename
-username = args.user
-password = args.password
+username = <Your GitRadar username here>
+password = <Your GitRadar password here>
+api = <Simulation API Url here>
 print("========================================================================");
 print("| -> Please wait, Uploading Data                                        |");
 print("========================================================================");
@@ -44,8 +43,7 @@ with open(filename, 'rb') as fd:
     print("| -> Response Received                                                  |");
     print("========================================================================");
     # Calling the api to carry out simulations
-    # r = requests.post('http://nsfcareer-compute-instance-test.us-east-1.elasticbeanstalk.com/api/generateSimulationForSensorData', data = data)
-    r = requests.post('https://nsfcareer.io/api/upload/sensor-file', data = data)
+    r = requests.post(api, data = data)
     
     # Logging response
 response = json.loads(r.text);
