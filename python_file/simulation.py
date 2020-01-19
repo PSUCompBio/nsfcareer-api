@@ -48,7 +48,7 @@ with open(filename, 'rb') as fd:
     print("========================================================================");
     # Calling the api to carry out simulations
     r = requests.post(api, data = data)
-    
+
     # Logging response
 response = json.loads(r.text);
 if response["message"] == "success":
@@ -63,7 +63,7 @@ if response["message"] == "success":
                     text("")
 
     # Folder name in which file will be stored
-    filename = datetime.now().strftime("%Y%m%d-%H%M%S")
+    filename = datetime.now().strftime("sr-%Y%m%d-%H%M%S")
     result = indent(doc.getvalue())
     try:
         os.mkdir(filename)
