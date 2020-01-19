@@ -18,6 +18,6 @@ NSFCAREER.IO provides a brain simulation API that enables sensor users to pass t
 - - - pip install yattag
 
 ## API usage example from the command line (or from within your app):
-python3 python_file/simulation.py --filename samples/sensor_data.xlsx  --user sensor_company --password tusryd-tuGwud-8kinwu --endpoint https://nsfcareer.io/api/upload/sensor-file
+`python3 python_file/simulation.py --filename samples/sensor_data.xlsx  --user sensor_company --password tusryd-tuGwud-8kinwu --endpoint https://nsfcareer.io/api/upload/sensor-file`
 
 where samples/sensor_data.xlsx is an example sensor data. Some samples are placed in the directory nsfcareeer-api/samples. You can supply your own data as long as we know how to read it. If this is the case contact Reuben Kraft at reuben.kraft@psu.edu. 
