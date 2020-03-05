@@ -13,10 +13,10 @@ The command given below is typically run from the command line or from within yo
 - PIP - package manager for Python
 - Requests Module
 - - Download it using :
-- - - pip install numpy
-- - - pip install requests
-- - - pip install "requests[security]"
-- - - pip install yattag
+    - pip install numpy
+    - pip install requests
+    - pip install "requests[security]"
+    - pip install yattag
 
 ## API usage example from the command line (or from within your app):
 `python3 python_file/simulation.py --filename samples/sensor_data.xlsx  --user sensor_company --password tusryd-tuGwud-8kinwu --endpoint https://nsfcareer.io/api/upload/sensor-file`
