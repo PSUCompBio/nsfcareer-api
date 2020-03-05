@@ -11,8 +11,7 @@ NSFCAREER.IO provides a brain simulation Applicatoin Programming Interface (API)
 The command given below is typically run from the command line or from within your own software platform or app. In order to do that we use python3 which needs some additional packages that can be installed using pip.
 - Python (version 3)
 - PIP - package manager for Python
-- Requests Module
-- - Download it using :
+- Requests Module, download it using :
     - pip install numpy
     - pip install requests
     - pip install "requests[security]"
