@@ -9,6 +9,7 @@ import argparse
 import os
 from yattag import Doc
 from yattag import indent
+import imghdr
 
 doc, tag, text = Doc().tagtext()
 
@@ -19,6 +20,7 @@ parser.add_argument('--filename', default=None, type=str, help="Path to sensor f
 parser.add_argument('--user', default=None, type=str, help="Username")
 parser.add_argument('--password', default=None, type=str, help="Password")
 parser.add_argument('--endpoint', default=None, type=str, help="Simulation Endpoint")
+parser.add_argument('--selfie', default=None, type=str, help="Path to player selfie")
 
 args = parser.parse_args()
 
@@ -34,22 +36,39 @@ filename = args.filename
 username = args.user
 password = args.password
 api = args.endpoint
+selfie = args.selfie
+
+b64ImageData = None
+
+# Reading file and converting it to base64 format
+with open(filename, 'rb') as fd:
+    b64data = base64.b64encode(fd.read())
+
+if (selfie != None):
+
+    # Check image file format
+    fileformat = imghdr.what(selfie)
+
+    if (fileformat == None):
+        print('Invalid Image format!! Accepted image formats are png, jpg/jpeg, tiff')
+        sys.exit(0)
+
+    with open(selfie, 'rb') as sd:
+        b64ImageData = base64.b64encode(sd.read())
+
+data = {'upload_file': b64data , 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie }
 
 print("========================================================================");
 print("| -> Please wait, Uploading Data                                        |");
 print("========================================================================");
-# Reading file and converting it to base64 format
-with open(filename, 'rb') as fd:
-    b64data = base64.b64encode(fd.read())
-    data = {'upload_file': b64data , 'user_name' : username , 'password' : password}
 
-    print("========================================================================");
-    print("| -> Response Received                                                  |");
-    print("========================================================================");
-    # Calling the api to carry out simulations
-    r = requests.post(api, data = data)
-
-    # Logging response
+# Calling the api to carry out simulations
+r = requests.post(api, data = data)
+    
+print("========================================================================");
+print("| -> Response Received                                                  |");
+print("========================================================================");
+# Logging response
 response = json.loads(r.text);
 if response["message"] == "success":
     # Iterate over the Image URLS & Write it in File-with timestamp
@@ -63,7 +82,7 @@ if response["message"] == "success":
                     text("")
 
     # Folder name in which file will be stored
-    filename = datetime.now().strftime("sr-%Y%m%d-%H%M%S")
+    filename = datetime.now().strftime("%Y%m%d-%H%M%S")
     result = indent(doc.getvalue())
     try:
         os.mkdir(filename)
