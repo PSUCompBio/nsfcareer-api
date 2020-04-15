@@ -56,7 +56,7 @@ if (selfie != None):
     with open(selfie, 'rb') as sd:
         b64ImageData = base64.b64encode(sd.read())
 
-data = {'upload_file': b64data , 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie }
+data = {'upload_file': b64data , 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie, 'data_filename' : filename}
 
 print("========================================================================");
 print("| -> Please wait, Uploading Data                                        |");
