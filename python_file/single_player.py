@@ -17,6 +17,7 @@ doc, tag, text = Doc().tagtext()
 # Setting up Argument parsing
 parser = argparse.ArgumentParser(description='Utility package to generate simulation data')
 parser.add_argument('--filename', default=None, type=str, help="Path to sensor file")
+parser.add_argument('--sensor', default=None, type=str, help="Sensor Company")
 parser.add_argument('--user', default=None, type=str, help="Username")
 parser.add_argument('--password', default=None, type=str, help="Password")
 parser.add_argument('--endpoint', default=None, type=str, help="Simulation Endpoint")
@@ -33,6 +34,7 @@ print("========================================================================"
 
 print()
 filename = args.filename
+sensor = args.sensor
 username = args.user
 password = args.password
 api = args.endpoint
@@ -56,7 +58,7 @@ if (selfie != None):
     with open(selfie, 'rb') as sd:
         b64ImageData = base64.b64encode(sd.read())
 
-data = {'upload_file': b64data , 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie, 'data_filename' : filename}
+data = {'upload_file': b64data , 'sensor' : sensor, 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie, 'data_filename' : filename}
 
 print("========================================================================");
 print("| -> Please wait, Uploading Data                                        |");
