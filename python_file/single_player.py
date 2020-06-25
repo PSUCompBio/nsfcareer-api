@@ -20,7 +20,8 @@ parser.add_argument('--filename', default=None, type=str, help="Path to sensor f
 parser.add_argument('--sensor', default=None, type=str, help="Sensor Company")
 parser.add_argument('--user', default=None, type=str, help="Username")
 parser.add_argument('--password', default=None, type=str, help="Password")
-parser.add_argument('--endpoint', default=None, type=str, help="Simulation Endpoint")
+#parser.add_argument('--endpoint', default=None, type=str, help="Simulation Endpoint")
+parser.add_argument('--mode', default='production', type=str, help="Mode")
 parser.add_argument('--selfie', default=None, type=str, help="Path to player selfie")
 
 args = parser.parse_args()
@@ -37,8 +38,9 @@ filename = args.filename
 sensor = args.sensor
 username = args.user
 password = args.password
-api = args.endpoint
+api = 'https://nsfcareer.io/api/upload/sensor-file' 
 selfie = args.selfie
+mode = args.mode
 
 b64ImageData = None
 
@@ -58,7 +60,7 @@ if (selfie != None):
     with open(selfie, 'rb') as sd:
         b64ImageData = base64.b64encode(sd.read())
 
-data = {'upload_file': b64data , 'sensor' : sensor, 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie, 'data_filename' : filename}
+data = {'upload_file': b64data , 'mode' : mode, 'sensor' : sensor, 'user_name' : username , 'password' : password, 'selfie' : b64ImageData, 'filename' : selfie, 'data_filename' : filename}
 
 print("========================================================================");
 print("| -> Please wait, Uploading Data                                        |");
