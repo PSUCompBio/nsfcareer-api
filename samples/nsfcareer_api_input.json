@@ -1,19 +1,19 @@
 [
   {
-    "sensor": "prevent",
+    "sensor": "sensor company",
     "impact-date": "06:23:2020",
     "impact-time": "11:33:22:011",
-    "player_id": "35001",
+    "player_id": "1",
     "organization": "Test ORG",
     "player": {
-      "first-name": "Test",
-      "last-name": "Test",
+      "first-name": "John",
+      "last-name": "Doe",
       "sport": "Football",
       "team": "Test Team",
       "position": "XXXX"
     },
     "simulation": {
-      "time" : [
+      "time": [
         0,
         0.3125,
         0.625,
@@ -175,9 +175,9 @@
         49.375,
         49.6875
       ],
-      "time-units": "seconds",
+      "time-units": "milliseconds",
       "linear-acceleration": {
-        "la-units": "g",
+        "la-units": "m/s^2",
         "x-la": [
           -4.64,
           -4.86,
