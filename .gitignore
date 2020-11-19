@@ -2,5 +2,13 @@ build
 sr*
 2020*
 nsfcareer_api_input-*.json
-sensor_X
-run.sh
+swa
+prevent
+stanford
+ai
+run-all.sh
+run-prevent.sh
+run-swa.sh
+generate*.sh
+run_sims*.sh
+curl-script
