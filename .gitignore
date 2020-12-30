@@ -12,3 +12,4 @@ run-swa.sh
 generate*.sh
 run_sims*.sh
 curl-script
+selfie

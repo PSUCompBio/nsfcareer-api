@@ -1838,7 +1838,7 @@
         ]
       },
       "maximum-time": 40.0,
-      "mesh-transformation": ["-z", "-x", "-y"],
+      "mesh-transformation": ["y", "-z", "-x"],
       "output-nodes": [
         10785,
         17088,

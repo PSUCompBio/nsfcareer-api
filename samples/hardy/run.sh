@@ -1,0 +1,1 @@
+curl -F "user=jthibado@preventbiometrics.com" -F "password=BrainComputing2020!" -F "filename=@input_C288-T3_Hardyetal2007-v2.json" -F "bypass_simulation_formatting=true"  -F "overwrite=true" https://nsfcareer.io/api/upload/sensor
